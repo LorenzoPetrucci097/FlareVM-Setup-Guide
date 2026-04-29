@@ -75,7 +75,7 @@ Questi passaggi sono validi sia per **VirtualBox** che per **VMware** ma possono
 | 3 | **Disco virtuale** | Crea un disco da almeno 80 GB — dinamico va bene |
 | 4 | **Rete** | Usa **NAT** per l'installazione (cambierai dopo) |
 | 5 | **Installa Windows** | Monta l'ISO e segui il setup. Scegli **Pro** se possibile |
-| 6 | **Disabilita Windows Update** | Dopo l'installazione, ESEGUI TUTTI GLI AGGIORNAMENTI <- Mandatorio |
+| 6 | **Aggiorna Windows** | Dopo l'installazione, ESEGUI TUTTI GLI AGGIORNAMENTI <- Mandatorio |
 
 > [!NOTE]
 > Installa le **Guest Additions** (VirtualBox - Potenzialmente già installate) -> [Guest Addition](https://www.virtualbox.org/manual/topics/guestadditions.html)
