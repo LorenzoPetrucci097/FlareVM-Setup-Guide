@@ -158,9 +158,8 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 |:---:|:---|:---|
 | 1 | 📸 **Snapshot** | Crea uno snapshot subito dopo il completamento — sarà il tuo stato "pulito" |
 | 2 | 🔒 **Rete** | Passa a **Host-Only** o **Rete-interna** per isolare la VM durante le analisi |
-| 3 | 📂 **Shared Folders** | Configura una cartella condivisa per trasferire campioni host → VM |
-| 4 | 🔄 **Aggiorna i tool** | Apri PowerShell (admin) → `cup all -y` per aggiornare i pacchetti Chocolatey |
-
+| 3 | 🔄 **Aggiorna i tool** | Apri PowerShell (admin) → `cup all -y` per aggiornare i pacchetti Chocolatey |
+| 4 | 📂 **Scaricare la repo con i Malware** | Eseguendo il codice del professore disponbile nelle slide 
 ---
 
 ## 📦 Metodo 2 — OVA pre-costruita (alternativa rapida)
