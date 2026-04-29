@@ -71,14 +71,15 @@ Questi passaggi sono validi sia per **VirtualBox** che per **VMware** ma possono
 | # | Azione | Dettagli |
 |:---:|:---|:---|
 | 1 | **Crea una nuova VM** | Seleziona `Windows 10 (64-bit)` come OS guest |
-| 2 | **RAM** | Assegna almeno 4 GB (meglio 8 GB) |
-| 3 | **Disco virtuale** | Crea un disco da almeno 60 GB — dinamico va bene |
+| 2 | **RAM** | Assegna almeno 4 GB (meglio 8 GB) + 2/3 processori o core |
+| 3 | **Disco virtuale** | Crea un disco da almeno 80 GB — dinamico va bene |
 | 4 | **Rete** | Usa **NAT** per l'installazione (cambierai dopo) |
 | 5 | **Installa Windows** | Monta l'ISO e segui il setup. Scegli **Pro** se possibile |
-| 6 | **Disabilita Windows Update** | Dopo l'installazione, disattiva gli aggiornamenti automatici |
+| 6 | **Disabilita Windows Update** | Dopo l'installazione, ESEGUI TUTTI GLI AGGIORNAMENTI <- Mandatorio |
 
 > [!NOTE]
 > Installa le **Guest Additions** (VirtualBox - Potenzialmente già installate) -> [Guest Addition](https://www.virtualbox.org/manual/topics/guestadditions.html)
+> 
 > Installa i **VMware Tools** per clipboard condivisa, drag-and-drop e risoluzione dinamica -> Click su "VM" nella barra strumenti in alto, nel menu' a tendina seleziona "Install VMware tools"
 
 ---
@@ -97,7 +98,7 @@ FLARE-VM richiede che Windows Defender e la Tamper Protection siano **completame
 > Crea un **punto di ripristino** prima di eseguire lo script. La rimozione di Defender è permanente e difficile da revertire.
 
 1. Nella VM, vai alla pagina [**Download**](https://github.com/ionuttbara/windows-defender-remover) del progetto
-2. Scarica il **Source Code (.zip)** oppure il **PE (.exe)** dell'ultima versione
+2. Scendi e scarica il **Source Code (.zip)** oppure il **l'eseguibile (.exe)** dell'ultima versione
 3. **Disabilita manualmente la Tamper Protection:**
    ```
    Impostazioni → Sicurezza di Windows → Protezione da virus e minacce
@@ -132,6 +133,7 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mandiant/flare-vm/master/install.ps1') | Set-Content -Path "$env:USERPROFILE\Desktop\install.ps1"; Unblock-File "$env:USERPROFILE\Desktop\install.ps1"; & "$env:USERPROFILE\Desktop\install.ps1"
 ```
 4. Quando verrà richiesto di inserire una **PASSWORD** bisognerà inserire la password di accesso all'utente
+5. Verrà chiesto quali plugin installare. Lasciare quelli presenti e in fondo aggiungere i seguenti: **DA COMPLETARE** 
 
 <details>
 <summary>📖 Cosa fa questo comando?</summary>
