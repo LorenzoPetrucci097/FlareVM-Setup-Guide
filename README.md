@@ -192,6 +192,7 @@ Se preferisci evitare l'installazione manuale, puoi scaricare un'immagine OVA gi
 
 | Risorsa | Link |
 |:---|:---|
+| Un grazie doveroso ai colleghi **Cherubini**, **Pinto** e **Ruocco** per il contributo | 🔥 |
 | FLARE-VM — Repository ufficiale | https://github.com/mandiant/flare-vm |
 | Windows 10 ISO — Download Microsoft | https://www.microsoft.com/software-download/windows10 |
 | Windows Defender Remover | https://github.com/ionuttbara/windows-defender-remover |
