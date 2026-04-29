@@ -108,6 +108,12 @@ FLARE-VM richiede che Windows Defender e la Tamper Protection siano **completame
 5. Esegui il remover come **Amministratore**
 6. Alla domanda, scegli **`Y`** — rimozione completa di Defender + Windows Security App
 7. Il sistema si riavvierà. Verifica che l'icona scudo nella tray sia sparita
+8. Al riavvio, o a fine installazione finale, eseguire i seguenti script per bloccare aggiornamenti futuri da windows
+```Powershell
+Add-Content "$env:windir\System32\drivers\etc\hosts" "`n127.0.0.1 sls.microsoft.com" 
+Add-Content "$env:windir\System32\drivers\etc\hosts" "`n127.0.0.1 kms.microsoft.com" 
+Add-Content "$env:windir\System32\drivers\etc\hosts" "`n127.0.0.1 activation.sls.microsoft.com"
+```
 
 #### Opzioni alternative - Manuali
 
