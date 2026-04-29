@@ -159,7 +159,7 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 | 1 | 📸 **Snapshot** | Crea uno snapshot subito dopo il completamento — sarà il tuo stato "pulito" |
 | 2 | 🔒 **Rete** | Passa a **Host-Only** o **Rete-interna** per isolare la VM durante le analisi |
 | 3 | 🔄 **Aggiorna i tool** | Apri PowerShell (admin) → `cup all -y` per aggiornare i pacchetti Chocolatey |
-| 4 | 📂 **Scaricare la repo con i Malware** | Eseguendo il codice del professore disponbile nelle slide o di seguito
+| 4 | 📂 **Scaricare la repo con i Malware** | Eseguendo il codice del professore disponbile nelle slide o di seguito, per poi runnarlo con PowerShell
 ```powershell
 (New-Object net.webclient).DownloadFile('https://raw.githubusercontent.com/Akir4d/utility/refs/heads/main/malwareRepo.ps1',"$([Environment]::GetFolderPath("Desktop"))\malwareRepo.ps1")
 ```
