@@ -59,12 +59,14 @@ Scarica l'ISO ufficiale di Windows 10 dal sito Microsoft:
 > 4. Ricarica la pagina con `Ctrl + F5`
 >
 > Ora vedrai il menu per scaricare direttamente l'ISO.
+>
+> In caso contrario, si costruisca una ISO con il media creation tool
 
 ---
 
 ### Step 2 · Creare la VM
 
-Questi passaggi sono validi sia per **VirtualBox** che per **VMware**:
+Questi passaggi sono validi sia per **VirtualBox** che per **VMware** ma possono differire in parte:
 
 | # | Azione | Dettagli |
 |:---:|:---|:---|
@@ -76,7 +78,8 @@ Questi passaggi sono validi sia per **VirtualBox** che per **VMware**:
 | 6 | **Disabilita Windows Update** | Dopo l'installazione, disattiva gli aggiornamenti automatici |
 
 > [!NOTE]
-> Installa le **Guest Additions** (VirtualBox) o i **VMware Tools** per clipboard condivisa, drag-and-drop e risoluzione dinamica.
+> Installa le **Guest Additions** (VirtualBox - Potenzialmente già installate) -> [Guest Addition](https://www.virtualbox.org/manual/topics/guestadditions.html)
+> Installa i **VMware Tools** per clipboard condivisa, drag-and-drop e risoluzione dinamica -> Click su "VM" nella barra strumenti in alto, nel menu' a tendina seleziona "Install VMware tools"
 
 ---
 
@@ -84,28 +87,28 @@ Questi passaggi sono validi sia per **VirtualBox** che per **VMware**:
 
 FLARE-VM richiede che Windows Defender e la Tamper Protection siano **completamente disattivati**. L'antivirus interferisce con i tool di analisi malware e può bloccare l'installazione.
 
-#### ✅ Opzione consigliata: Windows Defender Remover
+#### ✅ Opzione consigliata: Windows Defender Remover - Autonoma
 
 🔗 **https://github.com/ionuttbara/windows-defender-remover**
 
 **Procedura:**
 
-1. Nella VM, vai alla pagina [**Releases**](https://github.com/ionuttbara/windows-defender-remover/releases) del progetto
-2. Scarica il **Source Code (.zip)** dell'ultima versione
-3. Estrai l'archivio in una cartella
-4. **Disabilita manualmente la Tamper Protection:**
+> [!CAUTION]
+> Crea un **punto di ripristino** prima di eseguire lo script. La rimozione di Defender è permanente e difficile da revertire.
+
+1. Nella VM, vai alla pagina [**Download**](https://github.com/ionuttbara/windows-defender-remover) del progetto
+2. Scarica il **Source Code (.zip)** oppure il **PE (.exe)** dell'ultima versione
+3. **Disabilita manualmente la Tamper Protection:**
    ```
    Impostazioni → Sicurezza di Windows → Protezione da virus e minacce
    → Gestisci impostazioni → Protezione antimanomissione → OFF
    ```
-5. Esegui `Script_Run.bat` come **Amministratore**
+4. Estrai l'archivio in una cartella
+5. Esegui il remover come **Amministratore**
 6. Alla domanda, scegli **`Y`** — rimozione completa di Defender + Windows Security App
 7. Il sistema si riavvierà. Verifica che l'icona scudo nella tray sia sparita
 
-> [!CAUTION]
-> Crea un **punto di ripristino** prima di eseguire lo script. La rimozione di Defender è permanente e difficile da revertire.
-
-#### Opzioni alternative
+#### Opzioni alternative - Manuali
 
 | Metodo | Requisiti | Link |
 |:---|:---|:---|
@@ -128,6 +131,7 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 ```powershell
 (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mandiant/flare-vm/master/install.ps1') | Set-Content -Path "$env:USERPROFILE\Desktop\install.ps1"; Unblock-File "$env:USERPROFILE\Desktop\install.ps1"; & "$env:USERPROFILE\Desktop\install.ps1"
 ```
+4. Quando verrà richiesto di inserire una **PASSWORD** bisognerà inserire la password di accesso all'utente
 
 <details>
 <summary>📖 Cosa fa questo comando?</summary>
@@ -142,7 +146,7 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 </details>
 
 > [!IMPORTANT]
-> L'installazione richiede **30–90 minuti** a seconda della connessione. La VM si riavvierà più volte automaticamente. **Non interrompere il processo.**
+> L'installazione richiede **FINO A 4/5 ORE** a seconda della connessione e della macchina. La VM si riavvierà più volte automaticamente. **Non interrompere il processo.**
 
 ---
 
@@ -151,7 +155,7 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 | # | Azione | Dettagli |
 |:---:|:---|:---|
 | 1 | 📸 **Snapshot** | Crea uno snapshot subito dopo il completamento — sarà il tuo stato "pulito" |
-| 2 | 🔒 **Rete** | Passa a **Host-Only** o **Internal Network** per isolare la VM durante le analisi |
+| 2 | 🔒 **Rete** | Passa a **Host-Only** o **Rete-interna** per isolare la VM durante le analisi |
 | 3 | 📂 **Shared Folders** | Configura una cartella condivisa per trasferire campioni host → VM |
 | 4 | 🔄 **Aggiorna i tool** | Apri PowerShell (admin) → `cup all -y` per aggiornare i pacchetti Chocolatey |
 
