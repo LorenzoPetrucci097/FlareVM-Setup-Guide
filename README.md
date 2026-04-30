@@ -14,8 +14,7 @@
 
 ---
 
-<details>
-<summary>🇮🇹 <strong>Leggi in Italiano</strong></summary>
+# 🇮🇹 <strong>Leggi in Italiano</strong>
 
 ## Indice
 
@@ -141,8 +140,8 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 4. Quando verrà richiesto di inserire una **PASSWORD** bisognerà inserire la password di accesso all'utente
 5. Verrà chiesto quali plugin installare. Lasciare quelli presenti e in fondo nel form cercare e aggiungere i seguenti (Scrivendoli singolarmente e cercandoli): **cutter** - **fiddler** - **Capa** - **dnspyE** 
 
-<details>
-<summary>📖 Cosa fa questo comando?</summary>
+
+### 📖 Cosa fa questo comando?
 
 | Azione | Descrizione |
 |:---|:---|
@@ -150,8 +149,6 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 | `Set-Content -Path ...` | Salva lo script sul Desktop |
 | `Unblock-File` | Rimuove il flag "scaricato da internet" |
 | `& "...\install.ps1"` | Esegue lo script immediatamente |
-
-</details>
 
 > [!IMPORTANT]
 > L'installazione richiede **FINO A 4/5 ORE** a seconda della connessione e della macchina. La VM si riavvierà più volte automaticamente. **Non interrompere il processo.**
@@ -213,5 +210,3 @@ Se preferisci evitare l'installazione manuale, puoi scaricare un'immagine OVA gi
 > ⚠️ Questa guida è fornita a **scopo educativo** per attività di cybersecurity, reverse engineering e malware analysis in ambienti controllati. Utilizzala in modo responsabile.
 
 </details>
-
-
