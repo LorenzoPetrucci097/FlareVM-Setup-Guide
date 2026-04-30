@@ -139,7 +139,7 @@ Una volta che Defender è stato **rimosso con certezza** e il sistema è stato r
 (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mandiant/flare-vm/master/install.ps1') | Set-Content -Path "$env:USERPROFILE\Desktop\install.ps1"; Unblock-File "$env:USERPROFILE\Desktop\install.ps1"; & "$env:USERPROFILE\Desktop\install.ps1"
 ```
 4. Quando verrà richiesto di inserire una **PASSWORD** bisognerà inserire la password di accesso all'utente
-5. Verrà chiesto quali plugin installare. Lasciare quelli presenti e in fondo aggiungere i seguenti: **DA COMPLETARE** 
+5. Verrà chiesto quali plugin installare. Lasciare quelli presenti e in fondo nel form cercare e aggiungere i seguenti (Scrivendoli singolarmente e cercandoli): **cutter** - **fiddler** - **Capa** - **dnspyE** 
 
 <details>
 <summary>📖 Cosa fa questo comando?</summary>
